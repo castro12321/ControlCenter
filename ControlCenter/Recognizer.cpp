@@ -9,8 +9,8 @@
 Recognizer::Recognizer()
 {
 	config = cmd_ln_init(NULL, ps_args(), TRUE,
-		"-hmm", MODELDIR "/hmm/en_US/hub4wsj_sc_8k",
-		"-lm", MODELDIR "/lm/en/turtle.DMP",
+		"-hmm",  MODELDIR "/hmm/en_US/hub4wsj_sc_8k",
+		"-lm",   MODELDIR "/lm/en/turtle.DMP",
 		"-dict", MODELDIR "/lm/en/turtle.dic",
 		NULL);
 	if (config == NULL)
@@ -29,7 +29,7 @@ Recognizer::~Recognizer()
 std::string Recognizer::recognize(std::string inputFilename)
 {
 	int32 score;
-	char const *uttid;
+	const char *uttid;
 
 	FILE* fh = fopen(inputFilename.c_str(), "rb");
 	if (fh == NULL)

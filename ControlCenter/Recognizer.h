@@ -13,7 +13,6 @@ public:
 	Recognizer();
 	~Recognizer();
 
-
 	std::string recognize(std::string inputFilename);
 	void cleanup();
 };

@@ -8,10 +8,7 @@ Recorder::Recorder()
 {
 	// first check if an input audio device is available on the system
 	if (!sf::SoundBufferRecorder::isAvailable())
-	{
-		// error: audio capture is not available on this system
 		throw "audio capture is not available on this system";
-	}
 
 	// create the recorder
 	sf::SoundBufferRecorder recorder;
@@ -25,7 +22,7 @@ Recorder::~Recorder()
 
 void Recorder::start()
 {
-	const int sampleRate = 16000; // Sphinx requires 16kHz sample rate
+	const unsigned int sampleRate = 16000; // Sphinx requires 16kHz sample rate
 	recorder.start(sampleRate);
 }
 
@@ -54,10 +51,10 @@ void Recorder::debugInfo()
 {
 	sf::SoundBuffer buffer = getBuffer();
 
-	int duration     = buffer.getDuration().asSeconds();
-	int sampleRage   = buffer.getSampleRate();
-	int channelCount = buffer.getChannelCount();
-	int sampleCount  = buffer.getSampleCount();
+	float        duration     = buffer.getDuration().asSeconds();
+	unsigned int sampleRage   = buffer.getSampleRate();
+	unsigned int channelCount = buffer.getChannelCount();
+	std::size_t  sampleCount  = buffer.getSampleCount();
 
 	std::cout << "Sound information: " << std::endl;
 	std::cout << duration     << " seconds" << std::endl;
