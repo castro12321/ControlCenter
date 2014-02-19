@@ -2,6 +2,7 @@
 #include "Recorder.h"
 
 #include <Windows.h>
+#include <iostream>
 
 Recorder::Recorder()
 {
@@ -46,4 +47,21 @@ void Recorder::playBuffer(int bufferLengthMs)
 	sf::Sound sound(getBuffer());
 	sound.play();
 	Sleep(bufferLengthMs);
+}
+
+
+void Recorder::debugInfo()
+{
+	sf::SoundBuffer buffer = getBuffer();
+
+	int duration     = buffer.getDuration().asSeconds();
+	int sampleRage   = buffer.getSampleRate();
+	int channelCount = buffer.getChannelCount();
+	int sampleCount  = buffer.getSampleCount();
+
+	std::cout << "Sound information: " << std::endl;
+	std::cout << duration     << " seconds" << std::endl;
+	std::cout << sampleRage   << " samples / seconds" << std::endl;
+	std::cout << channelCount << " channels" << std::endl;
+	std::cout << sampleCount  << " samples" << std::endl;
 }

@@ -23,6 +23,7 @@ void captureAudioToFile(std::string outFilename)
 	recorder.stop();
 
 	// Play it
+	recorder.debugInfo();
 	recorder.playBuffer(captureTestLengthMs);
 
 

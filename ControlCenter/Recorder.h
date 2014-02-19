@@ -16,4 +16,5 @@ public:
 	const sf::SoundBuffer& getBuffer();
 
 	void playBuffer(int bufferLengthMs); // For testing purpose
+	void debugInfo();
 };
