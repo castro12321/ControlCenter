@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "Recorder.h"
 
-#include <Windows.h>
-#include <iostream>
-
 Recorder::Recorder()
 {
 	// first check if an input audio device is available on the system

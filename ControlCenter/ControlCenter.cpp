@@ -2,8 +2,6 @@
 //
 
 #include "stdafx.h"
-#include <iostream>
-#include <Windows.h>
 
 #include "Recorder.h"
 #include "Recognizer.h"

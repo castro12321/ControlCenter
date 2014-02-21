@@ -16,33 +16,36 @@
     <Filter Include="Core">
       <UniqueIdentifier>{68df5919-76a2-4778-a222-8a76b80d3da4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{1bc1ddab-b4b1-41b2-b46f-d8e26ba4dfcd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Recorder.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="Recognizer.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ControlCenter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Recorder.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Recognizer.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlCenter.cpp">
+      <Filter>Misc</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

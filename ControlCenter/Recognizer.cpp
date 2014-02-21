@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "Recognizer.h"
 
-#include <iostream>
-
 #define _CRT_SECURE_NO_WARNINGS
 #define MODELDIR "D:\\gdrive\\Google Drive\\code\\c++\\api\\pocketsphinx\\model"
 
