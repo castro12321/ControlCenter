@@ -36,11 +36,11 @@ const sf::SoundBuffer& Recorder::getBuffer()
 }
 
 
-void Recorder::playBuffer(int bufferLengthMs)
+void Recorder::playBuffer()
 {
 	sf::Sound sound(getBuffer());
 	sound.play();
-	Sleep(bufferLengthMs);
+	Sleep(getBuffer().getDuration().asMilliseconds());
 }
 
 

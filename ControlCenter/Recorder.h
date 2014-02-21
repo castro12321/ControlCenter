@@ -15,6 +15,6 @@ public:
 	void stop();  // Stop  the capture
 	const sf::SoundBuffer& getBuffer();
 
-	void playBuffer(int bufferLengthMs); // For testing purpose
+	void playBuffer(); // For testing purpose
 	void debugInfo();
 };
