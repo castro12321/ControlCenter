@@ -81,6 +81,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ControlCenter.h" />
+    <ClInclude Include="Config.h" />
     <ClInclude Include="Recognizer.h" />
     <ClInclude Include="Recorder.h" />
     <ClInclude Include="stdafx.h" />
@@ -88,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ControlCenter.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Recognizer.cpp" />
     <ClCompile Include="Recorder.cpp" />
     <ClCompile Include="stdafx.cpp">

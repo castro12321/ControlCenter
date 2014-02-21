@@ -1,47 +1,45 @@
-// ControlCenter.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
+#include "ControlCenter.h"
 
-#include "Recorder.h"
-#include "Recognizer.h"
+#include "Config.h"
 
-
-void captureAudioToFile(std::string outFilename)
+ControlCenter::ControlCenter()
 {
-	const int captureTestLengthMs = 3000;
-	// Prepare objects
-	Recorder recorder;
-
-	// Record some data
-	recorder.start();
-	std::cout << "STARTED RECORDING\n";
-	Sleep(captureTestLengthMs);
-	std::cout << "END RECORDING RECORDING\n";
-	recorder.stop();
-
-	// Play it
-	recorder.debugInfo();
-	recorder.playBuffer(captureTestLengthMs);
-
-
-	recorder.getBuffer().saveToFile(outFilename);
 }
 
 
-void recognizeAndPrintFromFile(std::string outFilename)
+ControlCenter::~ControlCenter()
 {
-	Recognizer recognizer;
-	recognizer.recognize(outFilename);
 	recognizer.cleanup();
 }
 
 
-int main(int argc, char *argv[])
+void ControlCenter::run()
 {
-	captureAudioToFile("out.raw");
-	recognizeAndPrintFromFile("out.raw");
+	while (true)
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+			return;
 
-	std::cin.get();
-	return 0;
+		if (sf::Keyboard::isKeyPressed(Config::recordButton))
+		{
+			record();
+
+			recorder.debugInfo();
+			recorder.playBuffer();
+
+			recorder.getBuffer().saveToFile(Config::OUT_AUDIO_FILENAME);
+
+			std::string recognized = recognizer.recognize(Config::OUT_AUDIO_FILENAME);
+		}
+	}
+}
+
+
+void ControlCenter::record()
+{
+	recorder.start();
+	while (sf::Keyboard::isKeyPressed(Config::recordButton))
+		Sleep(100);
+	recorder.stop();
 }

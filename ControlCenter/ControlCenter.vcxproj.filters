@@ -33,6 +33,12 @@
     <ClInclude Include="targetver.h">
       <Filter>Misc</Filter>
     </ClInclude>
+    <ClInclude Include="ControlCenter.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Recorder.cpp">
@@ -44,8 +50,11 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Misc</Filter>
     </ClCompile>
-    <ClCompile Include="ControlCenter.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlCenter.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
