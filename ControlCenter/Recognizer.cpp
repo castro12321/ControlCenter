@@ -8,13 +8,15 @@
 Recognizer::Recognizer()
 {
 	config = cmd_ln_init(NULL, ps_args(), TRUE,
-		"-hmm",  Config::MODELDIR + "/hmm/en_US/hub4wsj_sc_8k",
-		"-lm",   Config::MODELDIR + "/lm/en/turtle.DMP",
-		"-dict", Config::MODELDIR + "/lm/en/turtle.dic",
+		"-hmm",  "modeldir/hmm/en_US/hub4wsj_sc_8k",
+		"-lm",   "modeldir/lm/en/turtle.DMP",
+		"-dict", "modeldir/lm/en/turtle.dic",
 		NULL);
+	
 	if (config == NULL)
 		throw "Cannot initialize config";
 	ps = ps_init(config);
+	
 	if (ps == NULL)
 		throw "Cannot initialize ps";
 }
