@@ -8,7 +8,9 @@
 
 int main(int argc, char *argv[])
 {
+	std::cout << "Initializing Control Center\n";
 	ControlCenter app;
+	std::cout << "Initialized Control Center\n";
 	app.run();
 	return 0;
 }
