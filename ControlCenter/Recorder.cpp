@@ -6,9 +6,6 @@ Recorder::Recorder()
 	// first check if an input audio device is available on the system
 	if (!sf::SoundBufferRecorder::isAvailable())
 		throw "audio capture is not available on this system";
-
-	// create the recorder
-	sf::SoundBufferRecorder recorder;
 }
 
 

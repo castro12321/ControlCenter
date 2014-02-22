@@ -31,6 +31,7 @@ void ControlCenter::run()
 			recorder.getBuffer().saveToFile(Config::OUT_AUDIO_FILENAME);
 
 			std::string recognized = recognizer.recognize(Config::OUT_AUDIO_FILENAME);
+			// do sth with recognized...
 		}
 	}
 }
