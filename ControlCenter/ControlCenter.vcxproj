@@ -85,6 +85,7 @@
     <ClInclude Include="CommandRecognizer.h" />
     <ClInclude Include="ControlCenter.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="OpenHandler.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Recognizer.h" />
     <ClInclude Include="Recorder.h" />
@@ -95,6 +96,7 @@
     <ClCompile Include="CommandRecognizer.cpp" />
     <ClCompile Include="ControlCenter.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="OpenHandler.cpp" />
     <ClCompile Include="Recognizer.cpp" />
     <ClCompile Include="Recorder.cpp" />
     <ClCompile Include="stdafx.cpp">
