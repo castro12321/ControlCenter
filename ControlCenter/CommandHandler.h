@@ -1,23 +1,21 @@
 #pragma once
 
-class std::string;
+#include <string>
+#include <vector>
+using namespace std;
+
+#include "Utils.h"
 
 class CommandHandler
 {
 public:
-	CommandHandler()
-	{
-		
-	}
-
 	virtual ~CommandHandler()
+	{}
+
+	void handle(string sentence)
 	{
+		handle(split(sentence, ' '));
 	}
 
-
-	virtual void handle(std::string sentence)
-	{
-
-	}
+	virtual void handle(vector<string> words) = 0;
 };
-
