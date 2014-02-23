@@ -14,11 +14,11 @@ Recognizer::Recognizer()
 		NULL);
 	
 	if (config == NULL)
-		throw "Cannot initialize config";
+		std::cerr << "Cannot initialize config";
 	ps = ps_init(config);
 	
 	if (ps == NULL)
-		throw "Cannot initialize ps";
+		std::cerr << "Cannot initialize ps";
 }
 
 
@@ -34,14 +34,15 @@ std::string Recognizer::recognize(std::string inputFilename)
 
 	FILE* fh = fopen(inputFilename.c_str(), "rb");
 	if (fh == NULL)
-		throw "Failed to open out.raw";
+		std::cerr << "Failed to open " + inputFilename;
 
-	int rv = ps_decode_raw(ps, fh, "goforward", -1);
+	int rv = ps_decode_raw(ps, fh, NULL, -1);
 	if (rv < 0)
-		throw "Number of frames of data searched < 0";
+		std::cerr << "Number of frames of data searched < 0";
+	
 	const char* hyp = ps_get_hyp(ps, &score, &uttid);
 	if (hyp == NULL)
-		throw "hyp == NYLL";
+		std::cerr << "hyp == NYLL";
 
 	std::cout << "Recognition info: score=" << score << " uttid=" << *uttid << "\n";
 	printf("Recognized: %s\n", hyp);
