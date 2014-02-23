@@ -39,6 +39,12 @@
     <ClInclude Include="Config.h">
       <Filter>Misc</Filter>
     </ClInclude>
+    <ClInclude Include="CommandRecognizer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandHandler.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Recorder.cpp">
@@ -54,6 +60,9 @@
       <Filter>Misc</Filter>
     </ClCompile>
     <ClCompile Include="ControlCenter.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandRecognizer.cpp">
       <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>

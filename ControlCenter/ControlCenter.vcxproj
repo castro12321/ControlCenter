@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -81,6 +81,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CommandHandler.h" />
+    <ClInclude Include="CommandRecognizer.h" />
     <ClInclude Include="ControlCenter.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Recognizer.h" />
@@ -89,6 +91,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CommandRecognizer.cpp" />
     <ClCompile Include="ControlCenter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Recognizer.cpp" />
