@@ -19,6 +19,9 @@
     <Filter Include="Misc">
       <UniqueIdentifier>{1bc1ddab-b4b1-41b2-b46f-d8e26ba4dfcd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Handlers">
+      <UniqueIdentifier>{4c097638-2286-4b13-ac3f-7fa3c2ba421e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Recorder.h">
@@ -48,6 +51,9 @@
     <ClInclude Include="Utils.h">
       <Filter>Misc</Filter>
     </ClInclude>
+    <ClInclude Include="OpenHandler.h">
+      <Filter>Handlers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Recorder.cpp">
@@ -67,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="CommandRecognizer.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenHandler.cpp">
+      <Filter>Handlers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
