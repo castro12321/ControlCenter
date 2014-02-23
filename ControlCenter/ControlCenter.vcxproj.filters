@@ -45,6 +45,9 @@
     <ClInclude Include="CommandHandler.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Recorder.cpp">

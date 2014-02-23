@@ -85,6 +85,7 @@
     <ClInclude Include="CommandRecognizer.h" />
     <ClInclude Include="ControlCenter.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="Utils.h" />
     <ClInclude Include="Recognizer.h" />
     <ClInclude Include="Recorder.h" />
     <ClInclude Include="stdafx.h" />
