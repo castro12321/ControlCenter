@@ -25,13 +25,13 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 		{
 			if(result[0] == "open ")
 			{
-				sentence.erase(sentence.find("open ")); //remove "open" from command
+				sentence.erase(sentence.begin(),sentence.begin()+5); //remove "open" from command
 				return NULL; //return new OpenHandler(sentence);
 			}
 
 			if(result[0] == "close ")
 			{
-				sentence.erase(sentence.find("close "));
+				sentence.erase(sentence.begin(),sentence.begin()+6);
 				return NULL; //return new CloseHandler(sentence);
 			}
 		}
