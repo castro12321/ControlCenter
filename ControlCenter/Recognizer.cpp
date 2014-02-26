@@ -8,9 +8,9 @@
 Recognizer::Recognizer()
 {
 	config = cmd_ln_init(NULL, ps_args(), TRUE,
-		"-hmm",  "modeldir/hmm/en_US/generic",
-		"-lm",   "modeldir/lm/en_US/en-us.lm.dmp",
-		"-dict", "modeldir/lm/en_US/cmu07a.dic",
+		"-hmm",  "modeldir/acoustic",
+		"-lm",   "modeldir/language/turtle.dmp",
+		"-dict", "modeldir/dictionary/dic.dic",
 		NULL);
 	
 	if (config == NULL)
@@ -27,7 +27,7 @@ Recognizer::~Recognizer()
 }
 
 
-std::string Recognizer::recognize(std::string inputFilename)
+std::string Recognizer::recognize(std::string inputFilename) // <---------- return command
 {
 	int32 score;
 	const char *uttid;

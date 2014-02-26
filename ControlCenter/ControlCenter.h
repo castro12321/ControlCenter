@@ -2,10 +2,12 @@
 
 #include "Recognizer.h"
 #include "Recorder.h"
+#include "CommandRecognizer.h"
 
 class ControlCenter
 {
 public:
+	CommandRecognizer command;
 	Recognizer recognizer;
 	Recorder   recorder;
 

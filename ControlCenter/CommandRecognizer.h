@@ -1,28 +1,19 @@
 #pragma once
-
+#include <regex>
+#include <vector>
 #include <unordered_map>
 
 class CommandHandler;
 
-class CommandEntry
-{
-public:
-	const std::string regex;
-	const CommandHandler* const handler;
-};
-
-
 class CommandRecognizer
 {
 private:
-	typedef std::string pattern;
-	typedef std::vector<CommandHandler*> handlerList;
-	std::unordered_map<pattern, handlerList> handlers;
+	std::vector <std::regex> pattern;
+	void fillPattern();
 
 public:
+	CommandHandler* recognizeCommand(std::string sentence);
 	CommandRecognizer();
 	~CommandRecognizer();
-
-	CommandHandler* recognizeCommand(std::string sentence);
 };
 

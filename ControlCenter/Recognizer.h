@@ -10,6 +10,7 @@ private:
 	ps_decoder_t *ps;
 	
 public:
+	static std::string command;
 	Recognizer();
 	~Recognizer();
 
