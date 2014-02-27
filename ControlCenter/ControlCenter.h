@@ -1,15 +1,15 @@
 #pragma once
 
 #include "VoiceRecognizer.h"
-#include "Recorder.h"
+#include "VoiceRecorder.h"
 #include "CommandRecognizer.h"
 
 class ControlCenter
 {
 public:
-	CommandRecognizer command;
-	VoiceRecognizer recognizer;
-	Recorder   recorder;
+	CommandRecognizer cmmndRecognizer;
+	VoiceRecognizer   voiceRecognizer;
+	VoiceRecorder     voiceRecorder;
 
 	ControlCenter();
 	~ControlCenter();

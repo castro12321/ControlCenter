@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "Recorder.h"
+#include "VoiceRecorder.h"
 
-Recorder::Recorder()
+VoiceRecorder::VoiceRecorder()
 {
 	// first check if an input audio device is available on the system
 	if (!sf::SoundBufferRecorder::isAvailable())
@@ -9,31 +9,31 @@ Recorder::Recorder()
 }
 
 
-Recorder::~Recorder()
+VoiceRecorder::~VoiceRecorder()
 {
 }
 
 
-void Recorder::start()
+void VoiceRecorder::start()
 {
 	const unsigned int sampleRate = 16000; // Sphinx requires 16kHz sample rate
 	recorder.start(sampleRate);
 }
 
 
-void Recorder::stop()
+void VoiceRecorder::stop()
 {
 	recorder.stop();
 }
 
 
-const sf::SoundBuffer& Recorder::getBuffer()
+const sf::SoundBuffer& VoiceRecorder::getBuffer()
 {
 	return recorder.getBuffer();
 }
 
 
-void Recorder::playBuffer()
+void VoiceRecorder::playBuffer()
 {
 	sf::Sound sound(getBuffer());
 	sound.play();
@@ -41,7 +41,7 @@ void Recorder::playBuffer()
 }
 
 
-void Recorder::debugInfo()
+void VoiceRecorder::debugInfo()
 {
 	sf::SoundBuffer buffer = getBuffer();
 

@@ -10,7 +10,7 @@ ControlCenter::ControlCenter()
 
 ControlCenter::~ControlCenter()
 {
-	recognizer.cleanup();
+	voiceRecognizer.cleanup();
 }
 
 
@@ -25,13 +25,13 @@ void ControlCenter::run()
 		{
 			record();
 
-			recorder.debugInfo();
-			recorder.playBuffer();
+			voiceRecorder.debugInfo();
+			voiceRecorder.playBuffer();
 
-			recorder.getBuffer().saveToFile(Config::OUT_AUDIO_FILENAME);
+			voiceRecorder.getBuffer().saveToFile(Config::OUT_AUDIO_FILENAME);
 
-			std::string recognized = recognizer.recognize(Config::OUT_AUDIO_FILENAME); 
-			command.recognizeCommand(recognized);
+			std::string recognized = voiceRecognizer.recognize(Config::OUT_AUDIO_FILENAME);
+			cmmndRecognizer.recognizeCommand(recognized);
 			// do sth with recognized...
 		}
 	}
@@ -40,8 +40,8 @@ void ControlCenter::run()
 
 void ControlCenter::record()
 {
-	recorder.start();
+	voiceRecorder.start();
 	while (sf::Keyboard::isKeyPressed(Config::recordButton))
 		Sleep(100);
-	recorder.stop();
+	voiceRecorder.stop();
 }

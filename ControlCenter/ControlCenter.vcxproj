@@ -88,7 +88,7 @@
     <ClInclude Include="OpenHandler.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="VoiceRecognizer.h" />
-    <ClInclude Include="Recorder.h" />
+    <ClInclude Include="VoiceRecorder.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -98,7 +98,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OpenHandler.cpp" />
     <ClCompile Include="VoiceRecognizer.cpp" />
-    <ClCompile Include="Recorder.cpp" />
+    <ClCompile Include="VoiceRecorder.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

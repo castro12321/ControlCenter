@@ -2,14 +2,14 @@
 
 #include <SFML\Audio.hpp>
 
-class Recorder
+class VoiceRecorder
 {
 private:
 	sf::SoundBufferRecorder recorder;
 
 public:
-	Recorder();
-	~Recorder();
+	VoiceRecorder();
+	~VoiceRecorder();
 
 	void start(); // Start the capture
 	void stop();  // Stop  the capture
