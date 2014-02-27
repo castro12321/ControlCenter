@@ -11,8 +11,8 @@ CommandRecognizer::~CommandRecognizer()
 
 void CommandRecognizer::fillPattern()
 {
-	pattern.push_back(std::regex("open *"));
-	pattern.push_back(std::regex("close *"));
+	pattern.push_back(std::regex("open .*"));
+	pattern.push_back(std::regex("close .*"));
 	//etc.
 }	
 
