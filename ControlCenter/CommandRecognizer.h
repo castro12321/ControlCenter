@@ -8,7 +8,7 @@ class CommandHandler;
 class CommandRecognizer
 {
 private:
-	std::vector <std::regex> pattern;
+	std::vector <std::regex> patterns;
 	void fillPattern();
 
 public:
