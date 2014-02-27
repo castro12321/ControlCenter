@@ -40,6 +40,7 @@ local.properties
 *.suo
 *.user
 *.sln.docstates
+*.vcxproj
 
 # Build results
 
@@ -213,4 +214,3 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-*.vcxproj
