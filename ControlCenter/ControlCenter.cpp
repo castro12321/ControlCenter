@@ -3,6 +3,8 @@
 
 #include "Config.h"
 
+#include "CommandHandler.h"
+
 ControlCenter::ControlCenter()
 {
 }
@@ -31,8 +33,8 @@ void ControlCenter::run()
 			voiceRecorder.getBuffer().saveToFile(Config::OUT_AUDIO_FILENAME);
 
 			std::string recognized = voiceRecognizer.recognize(Config::OUT_AUDIO_FILENAME);
-			cmmndRecognizer.recognizeCommand(recognized);
-			// do sth with recognized...
+			CommandHandler* handler = cmmndRecognizer.recognizeCommand(recognized);
+			handler->handle(recognized);
 		}
 	}
 }
