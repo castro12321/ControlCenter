@@ -4,12 +4,10 @@
 #include <string>
 #include <sstream>
 
-using namespace std;
-
-vector<string>& split(const string &s, char delim, vector<string> &elems, int limit = INT_MAX)
+std::vector<std::string>& split(const std::string &s, char delim, std::vector<std::string> &elems, int limit = INT_MAX)
 {
-	stringstream ss(s);
-	string item;
+	std::stringstream ss(s);
+	std::string item;
 	
 	int i = 0;
 	while (std::getline(ss, item, delim))
@@ -22,8 +20,8 @@ vector<string>& split(const string &s, char delim, vector<string> &elems, int li
 }
 
 
-vector<string> split(const string& s, char delim, int limit = INT_MAX)
+std::vector<std::string> split(const std::string& s, char delim, int limit = INT_MAX)
 {
-	vector<string> elems;
+	std::vector<std::string> elems;
 	return split(s, delim, elems, limit);
 }
