@@ -1,11 +1,11 @@
 #include "stdafx.h"
-#include "Recognizer.h"
+#include "VoiceRecognizer.h"
 
 #include "Config.h"
 
 #define _CRT_SECURE_NO_WARNINGS
 
-Recognizer::Recognizer()
+VoiceRecognizer::VoiceRecognizer()
 {
 	config = cmd_ln_init(NULL, ps_args(), TRUE,
 		"-hmm",  "modeldir/acoustic",
@@ -22,12 +22,12 @@ Recognizer::Recognizer()
 }
 
 
-Recognizer::~Recognizer()
+VoiceRecognizer::~VoiceRecognizer()
 {
 }
 
 
-std::string Recognizer::recognize(std::string inputFilename) // <---------- return command
+std::string VoiceRecognizer::recognize(std::string inputFilename) // <---------- return command
 {
 	int32 score;
 	const char *uttid;
@@ -50,7 +50,7 @@ std::string Recognizer::recognize(std::string inputFilename) // <---------- retu
 }
 
 
-void Recognizer::cleanup()
+void VoiceRecognizer::cleanup()
 {
 	ps_free(ps);
 }

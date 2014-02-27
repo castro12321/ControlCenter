@@ -3,7 +3,7 @@
 #include <pocketsphinx.h>
 #include <string>
 
-class Recognizer
+class VoiceRecognizer
 {
 private:
 	cmd_ln_t *config;
@@ -11,8 +11,8 @@ private:
 	
 public:
 	static std::string command;
-	Recognizer();
-	~Recognizer();
+	VoiceRecognizer();
+	~VoiceRecognizer();
 
 	std::string recognize(std::string inputFilename);
 	void cleanup();

@@ -27,9 +27,6 @@
     <ClInclude Include="Recorder.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Recognizer.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Misc</Filter>
     </ClInclude>
@@ -54,12 +51,12 @@
     <ClInclude Include="OpenHandler.h">
       <Filter>Handlers</Filter>
     </ClInclude>
+    <ClInclude Include="VoiceRecognizer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Recorder.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Recognizer.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
@@ -76,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="OpenHandler.cpp">
       <Filter>Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="VoiceRecognizer.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
