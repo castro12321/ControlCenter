@@ -26,8 +26,8 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	for (std::regex pattern : patterns)
 		if(std::regex_search(sentence, result, pattern))
 		{
-			if(result[0] == "open ")
-				return new OpenHandler();
+			//if(result[0] == "open ")
+				//return new OpenHandler();
 			//if(result[0] == "close ")
 				//return new CloseHandler(sentence);
 		}

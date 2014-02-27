@@ -9,6 +9,6 @@ public:
 	virtual ~OpenHandler();
 
 	
-	void handle(vector<string> words) override;
+	void handle(std::vector<std::string> words) override;
 };
 

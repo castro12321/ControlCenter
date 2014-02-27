@@ -2,7 +2,6 @@
 
 #include <string>
 #include <vector>
-using namespace std;
 
 #include "Utils.h"
 
@@ -12,10 +11,10 @@ public:
 	virtual ~CommandHandler()
 	{}
 
-	void handle(string sentence)
+	void handle(std::string sentence)
 	{
 		handle(split(sentence, ' '));
 	}
 
-	virtual void handle(vector<string> words) = 0;
+	virtual void handle(std::vector<std::string> words) = 0;
 };
