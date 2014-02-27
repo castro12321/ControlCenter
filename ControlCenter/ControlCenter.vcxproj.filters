@@ -77,5 +77,8 @@
     <ClCompile Include="VoiceRecorder.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

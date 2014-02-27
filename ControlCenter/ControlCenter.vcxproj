@@ -97,6 +97,7 @@
     <ClCompile Include="ControlCenter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OpenHandler.cpp" />
+    <ClCompile Include="Utils.cpp" />
     <ClCompile Include="VoiceRecognizer.cpp" />
     <ClCompile Include="VoiceRecorder.cpp" />
     <ClCompile Include="stdafx.cpp">

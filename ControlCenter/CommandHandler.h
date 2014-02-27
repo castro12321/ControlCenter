@@ -13,7 +13,7 @@ public:
 
 	void handle(std::string sentence)
 	{
-		handle(split(sentence, ' '));
+		handle(Utils::split(sentence, ' '));
 	}
 
 	virtual void handle(std::vector<std::string> words) = 0;
