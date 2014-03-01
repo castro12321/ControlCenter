@@ -33,7 +33,7 @@ void ControlCenter::run()
 			voiceRecorder.getBuffer().saveToFile(Config::OUT_AUDIO_FILENAME);
 
 			std::string recognized = voiceRecognizer.recognize(Config::OUT_AUDIO_FILENAME);
-			CommandHandler* handler = cmmndRecognizer.recognizeCommand(recognized); // <--------- need to command handler !!!!!!!!!!!!
+			CommandHandler* handler = cmmndRecognizer.recognizeCommand(recognized);
 			handler->handle(recognized);
 		}
 	}

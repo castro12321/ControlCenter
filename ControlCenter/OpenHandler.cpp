@@ -31,19 +31,19 @@ void OpenHandler::runProgram(std::string name)
 {
 	databasePrograms();
 
-	for(int i=0; i<programs.size(); i++)
-		if(programs[i] == std::string(name+".lnk"))
-		{
-			ShellExecute(NULL, L"open", L"\"C:\\Documents and Settings\\All Users\\Desktop\\Aventail VPN Connection.lnk\"", NULL, NULL, SW_SHOWDEFAULT);
-		}
-}
+	std::string From = "C:/Users/Piotr Bielski/Documents/Programowanie/Projekty/ControlCenter/ControlCenter/programs/"+name+".lnk";
+	// ^^ path to program
+	std::wstring To(From.begin(), From.end());
+	LPCTSTR Last = To.c_str();
 
-// word0   word1
-// "open <program>"
+	for(std::string program : programs)
+		if(program == std::string(name+".lnk"))
+			ShellExecute(NULL, L"open",Last, NULL, NULL, SW_SHOWDEFAULT);
+}
 
 void OpenHandler::handle(std::vector<std::string> words)
 {
 	std::string program = words.at(1);
-
-	// TODO: open program ;)
+	databasePrograms();
+	runProgram(program);
 }
