@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -54,12 +54,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\gdrive\Google Drive\code\c++\api\SFML-2.1\include;D:\gdrive\Google Drive\code\c++\api\pocketsphinx\include;D:\gdrive\Google Drive\code\c++\api\sphinxbase\include\win32;D:\gdrive\Google Drive\code\c++\api\sphinxbase\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\dirent.h;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\pocketsphinx\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\sphinxbase\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\SFML-2.1 32bit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\gdrive\Google Drive\code\c++\api\SFML-2.1\lib\Debug;D:\gdrive\Google Drive\code\c++\api\pocketsphinx\bin\Debug;D:\gdrive\Google Drive\code\c++\api\sphinxbase\bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\sphinxbase\bin\Debug;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\pocketsphinx\bin\Debug;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\SFML-2.1 32bit\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-audio-d.lib;pocketsphinx.lib;sphinxbase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
