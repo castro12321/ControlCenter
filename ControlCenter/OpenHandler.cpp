@@ -44,6 +44,5 @@ void OpenHandler::runProgram(std::string name)
 void OpenHandler::handle(std::string sentence, std::vector<std::string> words)
 {
 	std::string program = words.at(1);
-	databasePrograms();
 	runProgram(program);
 }
