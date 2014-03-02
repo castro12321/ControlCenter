@@ -39,9 +39,6 @@
     <ClInclude Include="CommandRecognizer.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="CommandHandler.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="Utils.h">
       <Filter>Misc</Filter>
     </ClInclude>
@@ -55,6 +52,9 @@
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="CloseHandler.h">
+      <Filter>Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandHandler.h">
       <Filter>Handlers</Filter>
     </ClInclude>
   </ItemGroup>
