@@ -124,19 +124,13 @@ DWORD WINAPI TerminateApp(DWORD dwPID, DWORD dwTimeout)
 
 	// Wait on the handle. If it signals, great. If it times out, then you kill it.
 	if (WaitForSingleObject(hProc, dwTimeout) != WAIT_OBJECT_0)
-		return TA_FAILED;// dwRet = (TerminateProcess(hProc, 0) ? TA_SUCCESS_KILL : TA_FAILED);
+		dwRet = TA_FAILED;// dwRet = (TerminateProcess(hProc, 0) ? TA_SUCCESS_KILL : TA_FAILED);
 	else
 		dwRet = TA_SUCCESS_CLEAN;
 
 	CloseHandle(hProc);
 
 	return dwRet;
-}
-
-
-void closeProcess(std::string processName)
-{
-
 }
 
 

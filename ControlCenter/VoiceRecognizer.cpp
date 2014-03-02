@@ -34,15 +34,26 @@ std::string VoiceRecognizer::recognize(std::string inputFilename) // <----------
 
 	FILE* fh = fopen(inputFilename.c_str(), "rb");
 	if (fh == NULL)
-		std::cerr << "Failed to open " + inputFilename;
+	{
+		std::cerr << "ERROR: Failed to open " + inputFilename;
+		return "";
+	}
+		
 
 	int rv = ps_decode_raw(ps, fh, NULL, -1);
 	if (rv < 0)
-		std::cerr << "Number of frames of data searched < 0";
+	{
+		std::cerr << "ERROR: Number of frames of data searched < 0";
+		return "";
+	}
+	
 	
 	const char* hyp = ps_get_hyp(ps, &score, &uttid);
 	if (hyp == NULL)
-		std::cerr << "hyp == NYLL";
+	{
+		std::cerr << "ERROR: hyp == NYLL";
+		return "";
+	}
 
 	std::cout << "Recognition info: score=" << score << " uttid=" << *uttid << "\n";
 	printf("Recognized: %s\n", hyp);
