@@ -34,7 +34,8 @@ void ControlCenter::run()
 
 			std::string recognized = voiceRecognizer.recognize(Config::OUT_AUDIO_FILENAME);
 			CommandHandler* handler = cmmndRecognizer.recognizeCommand(recognized);
-			handler->handle(recognized);
+			if (handler != nullptr)
+				handler->handle(recognized);
 		}
 	}
 }
