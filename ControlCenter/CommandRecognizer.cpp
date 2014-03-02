@@ -16,6 +16,7 @@ void CommandRecognizer::fillPattern()
 {
 	patterns.push_back(std::regex("open *"));
 	patterns.push_back(std::regex("close *"));
+	// Random note: For complex regexes use raw string literals
 	//etc.
 }
 
