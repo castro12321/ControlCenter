@@ -3,6 +3,7 @@
 #include <fstream>
 #include <Windows.h>
 #include <TlHelp32.h>
+#include <unordered_map>
 
 CloseHandler::CloseHandler()
 {
