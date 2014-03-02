@@ -41,7 +41,7 @@ void OpenHandler::runProgram(std::string name)
 			ShellExecute(NULL, L"open",Last, NULL, NULL, SW_SHOWDEFAULT);
 }
 
-void OpenHandler::handle(std::vector<std::string> words)
+void OpenHandler::handle(std::string sentence, std::vector<std::string> words)
 {
 	std::string program = words.at(1);
 	databasePrograms();
