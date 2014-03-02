@@ -2,6 +2,7 @@
 #include "CommandRecognizer.h"
 
 #include "OpenHandler.h"
+#include "CloseHandler.h"
 
 
 CommandRecognizer::CommandRecognizer()
@@ -35,8 +36,8 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 				std::cout << "Recognized open command!\n";
 				return new OpenHandler();
 			}
-			//if(result[0] == "close ")
-				//return new CloseHandler(sentence);
+			if(result[0] == "close ")
+				return new CloseHandler();
 		}
 	}
 
