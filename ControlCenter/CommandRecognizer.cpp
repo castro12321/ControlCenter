@@ -13,33 +13,23 @@ CommandRecognizer::~CommandRecognizer()
 {
 }
 
-void CommandRecognizer::fillPattern()
-{
-	patterns.push_back(std::regex("open *"));
-	patterns.push_back(std::regex("close *"));
-	// Random note: For complex regexes use raw string literals
-	//etc.
-}
+const std::regex open("open *");
+const std::regex close("close *");
+const std::regex show_time("show time");
+const std::regex show_date("show date");
+const std::regex show_desktop("show desktop");
 
 CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 {
-	std::cout << "Trying to recognize sentence " << sentence << "\n";
+	std::cout << "Trying to recognize sentence: " << sentence << "\n";
 
-	fillPattern();
 	std::smatch result;
-	for (std::regex pattern : patterns)
-	{
-		if (std::regex_search(sentence, result, pattern))
-		{
-			if (result[0] == "open ")
-			{
-				std::cout << "Recognized open command!\n";
-				return new OpenHandler();
-			}
-			if(result[0] == "close ")
-				return new CloseHandler();
-		}
-	}
+
+	if(std::regex_search(sentence, result, open))
+		return new OpenHandler();
+
+	if(std::regex_search(sentence, result, close))
+		return new CloseHandler();
 
 	std::cout << "Nothing found! Returning nullptr :<\n";
 	return nullptr;
