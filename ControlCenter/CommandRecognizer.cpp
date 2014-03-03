@@ -3,7 +3,7 @@
 
 #include "OpenHandler.h"
 #include "CloseHandler.h"
-
+#include "ShowTimeHandler.h"
 
 CommandRecognizer::CommandRecognizer()
 {
@@ -30,6 +30,12 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 
 	if(std::regex_search(sentence, result, close))
 		return new CloseHandler();
+
+	if(std::regex_search(sentence, result, show_time))
+		return new ShowTimeHandler(ShowTimeHandler::SHOW::SHOW_TIME);
+
+	if(std::regex_search(sentence, result, show_date))
+		return new ShowTimeHandler(ShowTimeHandler::SHOW::SHOW_DATE);
 
 	std::cout << "Nothing found! Returning nullptr :<\n";
 	return nullptr;

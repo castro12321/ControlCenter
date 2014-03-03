@@ -57,6 +57,9 @@
     <ClInclude Include="CommandHandler.h">
       <Filter>Handlers</Filter>
     </ClInclude>
+    <ClInclude Include="ShowTimeHandler.h">
+      <Filter>Handlers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -84,6 +87,9 @@
       <Filter>Misc</Filter>
     </ClCompile>
     <ClCompile Include="CloseHandler.cpp">
+      <Filter>Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowTimeHandler.cpp">
       <Filter>Handlers</Filter>
     </ClCompile>
   </ItemGroup>
