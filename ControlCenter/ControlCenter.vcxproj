@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -54,12 +54,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\pocketsphinx\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\sphinxbase\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\SFML-2.1 32bit\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\dirent.h;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\pocketsphinx\bin\Debug;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\sphinxbase\bin\Debug;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\SFML-2.1 32bit\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-audio-d.lib;pocketsphinx.lib;sphinxbase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -87,6 +87,8 @@
     <ClInclude Include="ControlCenter.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="OpenHandler.h" />
+    <ClInclude Include="ShowTimeHandler.h" />
+    <ClInclude Include="SpeechSynthesizer.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="VoiceRecognizer.h" />
     <ClInclude Include="VoiceRecorder.h" />
@@ -99,6 +101,8 @@
     <ClCompile Include="ControlCenter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OpenHandler.cpp" />
+    <ClCompile Include="ShowTimeHandler.cpp" />
+    <ClCompile Include="SpeechSynthesizer.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="VoiceRecognizer.cpp" />
     <ClCompile Include="VoiceRecorder.cpp" />
