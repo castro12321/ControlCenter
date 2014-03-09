@@ -15,6 +15,12 @@ CloseHandler::~CloseHandler()
 }
 
 
+void terminateApp(HWND windowHandle)
+{
+	BOOL success = PostMessage(windowHandle, WM_CLOSE, 0, 0);
+}
+
+
 // Returns Map<ProgramName, ProcessName>
 std::unordered_map<std::string, std::string> getProcessesMap()
 {
@@ -76,7 +82,7 @@ BOOL CALLBACK TerminateAppEnum(HWND hwnd, LPARAM lParam)
 	GetWindowThreadProcessId(hwnd, &dwID);
 
 	if (dwID == (DWORD)lParam)
-		PostMessage(hwnd, WM_CLOSE, 0, 0);
+		terminateApp(hwnd);
 
 	return TRUE;
 }
@@ -136,12 +142,22 @@ DWORD WINAPI TerminateApp(DWORD dwPID, DWORD dwTimeout)
 
 void CloseHandler::handle(std::string sentence, std::vector<std::string> words)
 {
-	std::string programName = Utils::split(sentence, ' ', 1)[1];
-	std::string processName = getProcessesMap().at(programName);
-	std::cout << "Closing " << programName << " processName: " << processName << "\n";
+	words = Utils::split(sentence, ' ', 1);
+	if (words.size() < 2)
+		return;
+	std::string programName = words[1];
 
-	DWORD PID = GetProcID(processName);
-	std::cout << "Found PID: " << PID;
-
-	TerminateApp(PID, 5000);
+	if (programName == "current"
+	||  programName == "active")
+	{
+		terminateApp(GetForegroundWindow());
+	}
+	else
+	{
+		std::string processName = getProcessesMap().at(programName);
+		std::cout << "Closing " << programName << " processName: " << processName << "\n";
+		DWORD PID = GetProcID(processName);
+		std::cout << "Found PID: " << PID;
+		TerminateApp(PID, 5000);
+	}
 }
