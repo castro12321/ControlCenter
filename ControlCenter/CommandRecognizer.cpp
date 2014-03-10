@@ -3,7 +3,7 @@
 
 #include "OpenHandler.h"
 #include "CloseHandler.h"
-#include "ShowTimeHandler.h"
+#include "SayTimeHandler.h"
 
 CommandRecognizer::CommandRecognizer()
 {
@@ -15,8 +15,10 @@ CommandRecognizer::~CommandRecognizer()
 
 const std::regex open("open *");
 const std::regex close("close *");
-const std::regex show_time("show time");
-const std::regex show_date("show date");
+const std::regex say_time("say time");
+const std::regex timee("time");
+const std::regex say_date("say date");
+const std::regex datee("date");
 const std::regex show_desktop("show desktop");
 
 CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
@@ -31,11 +33,11 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	if(std::regex_search(sentence, result, close))
 		return new CloseHandler();
 
-	if(std::regex_search(sentence, result, show_time))
-		return new ShowTimeHandler(ShowTimeHandler::SHOW::SHOW_TIME);
+	if(std::regex_search(sentence, result, say_time) || std::regex_search(sentence, result, timee))
+		return new SayTimeHandler(SayTimeHandler::COMMAND::SAY_TIME);
 
-	if(std::regex_search(sentence, result, show_date))
-		return new ShowTimeHandler(ShowTimeHandler::SHOW::SHOW_DATE);
+	if(std::regex_search(sentence, result, say_date) || std::regex_search(sentence, result, datee))
+		return new SayTimeHandler(SayTimeHandler::COMMAND::SAY_DATE);
 
 	std::cout << "Nothing found! Returning nullptr :<\n";
 	return nullptr;

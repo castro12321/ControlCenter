@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -54,7 +54,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\pocketsphinx\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\sphinxbase\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\SFML-2.1 32bit\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\dirent.h;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\pocketsphinx\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\sphinxbase\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\dirent.h;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\SFML-2.1 32bit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -88,7 +88,7 @@
     <ClInclude Include="Config.h" />
     <ClInclude Include="KeyHandler.h" />
     <ClInclude Include="OpenHandler.h" />
-    <ClInclude Include="ShowTimeHandler.h" />
+    <ClInclude Include="SayTimeHandler.h" />
     <ClInclude Include="SpeechSynthesizer.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="VoiceRecognizer.h" />
@@ -103,7 +103,7 @@
     <ClCompile Include="KeyHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OpenHandler.cpp" />
-    <ClCompile Include="ShowTimeHandler.cpp" />
+    <ClCompile Include="SayTimeHandler.cpp" />
     <ClCompile Include="SpeechSynthesizer.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="VoiceRecognizer.cpp" />

@@ -2,16 +2,17 @@
 #include "CommandHandler.h"
 #include "SpeechSynthesizer.h"
 
-class ShowTimeHandler : public CommandHandler
+class SayTimeHandler : public CommandHandler
 {
 private:
 	SpeechSynthesizer synthesizer;
-public:
-	enum SHOW {SHOW_TIME, SHOW_DATE};
-	SHOW show;
 
-	ShowTimeHandler(SHOW value);
-	virtual ~ShowTimeHandler();
+public:
+	enum COMMAND {SAY_TIME, SAY_DATE};
+	COMMAND cammand;
+
+	SayTimeHandler(COMMAND value);
+	virtual ~SayTimeHandler();
 
 	void handle(std::string sentence, std::vector<std::string> words) override;
 };

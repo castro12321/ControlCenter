@@ -57,14 +57,14 @@
     <ClInclude Include="CommandHandler.h">
       <Filter>Handlers</Filter>
     </ClInclude>
-    <ClInclude Include="ShowTimeHandler.h">
-      <Filter>Handlers</Filter>
-    </ClInclude>
     <ClInclude Include="SpeechSynthesizer.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="KeyHandler.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SayTimeHandler.h">
+      <Filter>Handlers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -95,14 +95,14 @@
     <ClCompile Include="CloseHandler.cpp">
       <Filter>Handlers</Filter>
     </ClCompile>
-    <ClCompile Include="ShowTimeHandler.cpp">
-      <Filter>Handlers</Filter>
-    </ClCompile>
     <ClCompile Include="SpeechSynthesizer.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="KeyHandler.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SayTimeHandler.cpp">
+      <Filter>Handlers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
