@@ -43,40 +43,41 @@ void SayTimeHandler::handle(std::string sentence, std::vector<std::string> words
 			{
 				std::string month;
 				std::string day;
+				std::string today("Today is ");
 
 				switch(time.wDay)
 				{
-					case 1: day = "Today is the first of "; break;
-					case 2: day = "Today is the second of "; break;
-					case 3: day = "Today is the third of "; break;
-					case 4: day = "Today is the fourth of "; break;
-					case 5: day = "Today is the fifth of "; break;
-					case 6: day = "Today is the sixth of "; break;
-					case 7: day	= "Today is the seventh of "; break;
-					case 8: day = "Today is the eighth of "; break;
-					case 9: day = "Today is the ninth of "; break;
-					case 10: day = "Today is the tenth of "; break;
-					case 11: day = "Today is the eleventh of "; break;
-					case 12: day = "Today is the twelfth of "; break;
-					case 13: day = "Today is the thirteenth of "; break;
-					case 14: day = "Today is the fourteenth of "; break;
-					case 15: day = "Today is the fifteenth of "; break;
-					case 16: day = "Today is the sixteenth of "; break;
-					case 17: day = "Today is the seventeenth of "; break;
-					case 18: day = "Today is the eighteenth of "; break;
-					case 19: day = "Today is the nineteenth of "; break;
-					case 20: day = "Today is the twentieth of "; break;
-					case 21: day = "Today is the twenty-first of "; break;
-					case 22: day = "Today is the twenty-second of "; break;
-					case 23: day = "Today is the twenty-third of "; break;
-					case 24: day = "Today is the twenty-fourth of "; break;
-					case 25: day = "Today is the twenty-fifth of "; break;
-					case 26: day = "Today is the twenty-sixth of "; break;
-					case 27: day = "Today is the twenty-seventh of "; break;
-					case 28: day = "Today is the twenty-eighth of "; break;
-					case 29: day = "Today is the twenty-ninth of "; break;
-					case 30: day = "Today is the thirtieth of "; break;
-					case 31: day = "Today is the thirty-first of "; break;
+					case 1: day = "the first of "; break;
+					case 2: day = "the second of "; break;
+					case 3: day = "the third of "; break;
+					case 4: day = "the fourth of "; break;
+					case 5: day = "the fifth of "; break;
+					case 6: day = "the sixth of "; break;
+					case 7: day	= "the seventh of "; break;
+					case 8: day = "the eighth of "; break;
+					case 9: day = "the ninth of "; break;
+					case 10: day = "the tenth of "; break;
+					case 11: day = "the eleventh of "; break;
+					case 12: day = "the twelfth of "; break;
+					case 13: day = "the thirteenth of "; break;
+					case 14: day = "the fourteenth of "; break;
+					case 15: day = "the fifteenth of "; break;
+					case 16: day = "the sixteenth of "; break;
+					case 17: day = "the seventeenth of "; break;
+					case 18: day = "the eighteenth of "; break;
+					case 19: day = "the nineteenth of "; break;
+					case 20: day = "the twentieth of "; break;
+					case 21: day = "the twenty-first of "; break;
+					case 22: day = "the twenty-second of "; break;
+					case 23: day = "the twenty-third of "; break;
+					case 24: day = "the twenty-fourth of "; break;
+					case 25: day = "the twenty-fifth of "; break;
+					case 26: day = "the twenty-sixth of "; break;
+					case 27: day = "the twenty-seventh of "; break;
+					case 28: day = "the twenty-eighth of "; break;
+					case 29: day = "the twenty-ninth of "; break;
+					case 30: day = "the thirtieth of "; break;
+					case 31: day = "the thirty-first of "; break;
 				}
 
 				switch(time.wMonth)
@@ -95,7 +96,7 @@ void SayTimeHandler::handle(std::string sentence, std::vector<std::string> words
 					case 12: month = "December"; break;
 				}		
 
-				say = day+month;
+				say = today+day+month;
 				synthesizer.say(say);
 				break;
 			}
