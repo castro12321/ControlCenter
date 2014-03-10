@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -86,6 +86,7 @@
     <ClInclude Include="CommandRecognizer.h" />
     <ClInclude Include="ControlCenter.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="KeyHandler.h" />
     <ClInclude Include="OpenHandler.h" />
     <ClInclude Include="ShowTimeHandler.h" />
     <ClInclude Include="SpeechSynthesizer.h" />
@@ -99,6 +100,7 @@
     <ClCompile Include="CloseHandler.cpp" />
     <ClCompile Include="CommandRecognizer.cpp" />
     <ClCompile Include="ControlCenter.cpp" />
+    <ClCompile Include="KeyHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OpenHandler.cpp" />
     <ClCompile Include="ShowTimeHandler.cpp" />
