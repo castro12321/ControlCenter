@@ -54,7 +54,7 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	static const std::regex SHOW_DESKTOP("show desktop");
 
 
-	synthesizer.say("Sorry I don't know this command");
-	//std::cout << "Nothing found! Returning nullptr :<\n";
+	//synthesizer.say("Sorry I don't know this command"); // Sorry, but it freezes the app :<
+	std::cout << "Nothing found! Returning nullptr :<\n";
 	return nullptr;
 }
