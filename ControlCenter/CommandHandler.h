@@ -4,9 +4,13 @@
 #include <vector>
 
 #include "Utils.h"
+#include "SpeechSynthesizer.h"
 
 class CommandHandler
 {
+protected:
+	SpeechSynthesizer synthesizer;
+
 public:
 	virtual ~CommandHandler()
 	{}

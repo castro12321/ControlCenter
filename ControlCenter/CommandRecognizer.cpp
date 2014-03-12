@@ -39,6 +39,7 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	if(std::regex_search(sentence, result, say_date) || std::regex_search(sentence, result, datee))
 		return new SayTimeHandler(SayTimeHandler::COMMAND::SAY_DATE);
 
-	std::cout << "Nothing found! Returning nullptr :<\n";
+	synthesizer.say("Sorry I don't know this command");
+	//std::cout << "Nothing found! Returning nullptr :<\n";
 	return nullptr;
 }

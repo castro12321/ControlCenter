@@ -21,10 +21,17 @@ void OpenHandler::runProgram(std::string name)
 	for (std::string program : programs)
 		if (program == std::string(name + ".lnk"))
 			ShellExecute(NULL, L"open", programName.c_str(), NULL, L"programs", SW_SHOWDEFAULT);
+	
+	synthesizer.say("I didn't find program");
 }
 
 void OpenHandler::handle(std::string sentence, std::vector<std::string> words)
 {
-	std::string program = words.at(1);
-	runProgram(program);
+	if(words.size() > 1)
+	{
+		std::string program = words.at(1);
+		runProgram(program);
+	}
+	else
+		synthesizer.say("I didn't find program");
 }

@@ -142,6 +142,9 @@ DWORD WINAPI TerminateApp(DWORD dwPID, DWORD dwTimeout)
 
 void CloseHandler::handle(std::string sentence, std::vector<std::string> words)
 {
+	if(words.size() == 1)
+		synthesizer.say("I didn't find program");
+
 	words = Utils::split(sentence, ' ', 1);
 	if (words.size() < 2)
 		return;
