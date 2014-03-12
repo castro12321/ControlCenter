@@ -14,13 +14,6 @@ CommandRecognizer::~CommandRecognizer()
 {
 }
 
-static const std::regex open("open *");
-static const std::regex close("close *");
-static const std::regex say_time("say time");
-static const std::regex timee("time");
-static const std::regex say_date("say date");
-static const std::regex datee("date");
-static const std::regex show_desktop("show desktop");
 
 CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 {
@@ -42,18 +35,24 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	if (std::regex_search(sentence, result, WINDOW_MAXIMIZE))
 		return new WindowHandler(WindowHandler::MAXIMIZE);
 
-
-	if(std::regex_search(sentence, result, open))
+	static const std::regex OPEN_PROGRAM("^open .*");
+	if (std::regex_search(sentence, result, OPEN_PROGRAM))
 		return new OpenHandler();
 
-	if(std::regex_search(sentence, result, close))
+	static const std::regex CLOSE_PROGRAM("^close .*");
+	if (std::regex_search(sentence, result, CLOSE_PROGRAM))
 		return new CloseHandler();
 
-	if(std::regex_search(sentence, result, say_time) || std::regex_search(sentence, result, timee))
+	static const std::regex SAY_TIME1("^say time"), SAY_TIME2("^time");
+	if (std::regex_search(sentence, result, SAY_TIME1) || std::regex_search(sentence, result, SAY_TIME2))
 		return new SayTimeHandler(SayTimeHandler::COMMAND::SAY_TIME);
 
-	if(std::regex_search(sentence, result, say_date) || std::regex_search(sentence, result, datee))
+	static const std::regex SAY_DATE1("^say date"), SAY_DATE2("^date");
+	if (std::regex_search(sentence, result, SAY_DATE1) || std::regex_search(sentence, result, SAY_DATE2))
 		return new SayTimeHandler(SayTimeHandler::COMMAND::SAY_DATE);
+
+	static const std::regex SHOW_DESKTOP("show desktop");
+
 
 	synthesizer.say("Sorry I don't know this command");
 	//std::cout << "Nothing found! Returning nullptr :<\n";
