@@ -27,12 +27,14 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	||  std::regex_search(sentence, result, WINDOW_CLOSE2))
 		return new WindowHandler(WindowHandler::CLOSE);
 
-	static const std::regex WINDOW_MINIMIZE("^window minimize");
-	if (std::regex_search(sentence, result, WINDOW_MINIMIZE))
+	static const std::regex WINDOW_MINIMIZE1("^window minimize"), WINDOW_MINIMIZE2("^minimize");
+	if (std::regex_search(sentence, result, WINDOW_MINIMIZE1)
+	||  std::regex_search(sentence, result, WINDOW_MINIMIZE2))
 		return new WindowHandler(WindowHandler::MINIMIZE);
 
-	static const std::regex WINDOW_MAXIMIZE("^window maximize");
-	if (std::regex_search(sentence, result, WINDOW_MAXIMIZE))
+	static const std::regex WINDOW_MAXIMIZE1("^window maximize"), WINDOW_MAXIMIZE2("^maximize");
+	if (std::regex_search(sentence, result, WINDOW_MAXIMIZE1)
+	||  std::regex_search(sentence, result, WINDOW_MAXIMIZE2))
 		return new WindowHandler(WindowHandler::MAXIMIZE);
 
 	static const std::regex OPEN_PROGRAM("^open .*");
