@@ -53,7 +53,7 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	if (std::regex_search(sentence, result, SAY_DATE1) || std::regex_search(sentence, result, SAY_DATE2))
 		return new SayTimeHandler(SayTimeHandler::COMMAND::SAY_DATE);
 
-	static const std::regex SHOW_DESKTOP("show desktop");
+	static const std::regex SHOW_DESKTOP("^show desktop");
 
 
 	//synthesizer.say("Sorry I don't know this command"); // Sorry, but it freezes the app :<
