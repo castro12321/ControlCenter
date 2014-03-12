@@ -10,5 +10,5 @@ public:
 	SayTimeHandler(COMMAND value);
 	virtual ~SayTimeHandler();
 
-	void handle(std::string sentence, std::vector<std::string> words) override;
+	void handle(std::string sentence) override;
 };

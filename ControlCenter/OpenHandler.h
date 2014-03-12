@@ -9,6 +9,6 @@ private:
 public:
 	OpenHandler();
 	virtual ~OpenHandler();
-	void handle(std::string sentence, std::vector<std::string> words) override;
+	void handle(std::string sentence) override;
 };
 

@@ -40,7 +40,7 @@ KeyHandler::~KeyHandler()
 }
 
 
-void KeyHandler::handle(std::string, std::vector<std::string>)
+void KeyHandler::handle(std::string)
 {
 	generateKey(virtualKey, extended);
 }

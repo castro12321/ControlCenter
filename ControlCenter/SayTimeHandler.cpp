@@ -10,7 +10,7 @@ SayTimeHandler::~SayTimeHandler()
 {
 }
 
-void SayTimeHandler::handle(std::string sentence, std::vector<std::string> words)
+void SayTimeHandler::handle(std::string sentence)
 {
 	SYSTEMTIME time;
 	GetLocalTime(&time);

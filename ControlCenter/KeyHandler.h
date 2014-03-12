@@ -13,5 +13,5 @@ protected:
 
 public:
 	virtual ~KeyHandler();
-	void handle(std::string, std::vector<std::string>) override;
+	void handle(std::string) override;
 };
