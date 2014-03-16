@@ -6,6 +6,7 @@
 #include "CloseHandler.h"
 #include "SayTimeHandler.h"
 #include "RefreshHandler.h"
+#include "CreateHandler.h"
 
 CommandRecognizer::CommandRecognizer()
 {
@@ -57,6 +58,14 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	static const std::regex REFRESH("^refresh");
 	if (std::regex_search(sentence, result, REFRESH))
 		return new RefreshHandler();
+
+	static const std::regex CREATE_DIR("^(create|new) directory");
+	if (std::regex_search(sentence, result, CREATE_DIR))
+		return new CreateHandler(CreateHandler::COMMAND::CREATE_DIR);
+
+	static const std::regex CREATE_FILE("^(create|new) file");
+	if (std::regex_search(sentence, result, CREATE_FILE))
+		return new CreateHandler(CreateHandler::COMMAND::CREATE_FILE);
 
 	static const std::regex SHOW_DESKTOP("^show desktop");
 

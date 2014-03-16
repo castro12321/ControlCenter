@@ -86,6 +86,7 @@
     <ClInclude Include="CommandRecognizer.h" />
     <ClInclude Include="ControlCenter.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="CreateHandler.h" />
     <ClInclude Include="KeyHandler.h" />
     <ClInclude Include="OpenHandler.h" />
     <ClInclude Include="RefreshHandler.h" />
@@ -102,6 +103,7 @@
     <ClCompile Include="CloseHandler.cpp" />
     <ClCompile Include="CommandRecognizer.cpp" />
     <ClCompile Include="ControlCenter.cpp" />
+    <ClCompile Include="CreateHandler.cpp" />
     <ClCompile Include="KeyHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OpenHandler.cpp" />

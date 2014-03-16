@@ -72,6 +72,9 @@
     <ClInclude Include="RefreshHandler.h">
       <Filter>Handlers</Filter>
     </ClInclude>
+    <ClInclude Include="CreateHandler.h">
+      <Filter>Handlers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -114,6 +117,9 @@
       <Filter>Handlers</Filter>
     </ClCompile>
     <ClCompile Include="RefreshHandler.cpp">
+      <Filter>Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateHandler.cpp">
       <Filter>Handlers</Filter>
     </ClCompile>
   </ItemGroup>
