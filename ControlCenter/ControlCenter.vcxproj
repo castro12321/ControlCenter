@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -91,6 +91,7 @@
     <ClInclude Include="OpenHandler.h" />
     <ClInclude Include="RefreshHandler.h" />
     <ClInclude Include="SayTimeHandler.h" />
+    <ClInclude Include="ShowDesktopHandler.h" />
     <ClInclude Include="SpeechSynthesizer.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="VoiceRecognizer.h" />
@@ -109,6 +110,7 @@
     <ClCompile Include="OpenHandler.cpp" />
     <ClCompile Include="RefreshHandler.cpp" />
     <ClCompile Include="SayTimeHandler.cpp" />
+    <ClCompile Include="ShowDesktopHandler.cpp" />
     <ClCompile Include="SpeechSynthesizer.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="VoiceRecognizer.cpp" />

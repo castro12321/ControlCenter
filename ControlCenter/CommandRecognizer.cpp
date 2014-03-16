@@ -7,6 +7,7 @@
 #include "SayTimeHandler.h"
 #include "RefreshHandler.h"
 #include "CreateHandler.h"
+#include "ShowDesktopHandler.h"
 
 CommandRecognizer::CommandRecognizer()
 {
@@ -23,7 +24,6 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 
 	std::smatch result;
 
-	
 	static const std::regex WINDOW_CLOSE1("^close (active|current)"), WINDOW_CLOSE2("^window close");
 	if (std::regex_search(sentence, result, WINDOW_CLOSE1)
 	||  std::regex_search(sentence, result, WINDOW_CLOSE2))
@@ -68,7 +68,8 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 		return new CreateHandler(CreateHandler::COMMAND::CREATE_FILE);
 
 	static const std::regex SHOW_DESKTOP("^show desktop");
-
+	if (std::regex_search(sentence, result, SHOW_DESKTOP))
+		return new ShowDesktopHandler();
 
 	//synthesizer.say("Sorry I don't know this command"); // Sorry, but it freezes the app :<
 	std::cout << "Nothing found! Returning nullptr :<\n";
