@@ -2,7 +2,7 @@
 #include "KeyHandler.h"
 
 
-void generateKey(int vk, BOOL bExtended)
+void KeyHandler::generateKey(int vk, BOOL bExtended)
 {
 	KEYBDINPUT kb = { 0 };
 	INPUT   input = { 0 };
@@ -37,10 +37,4 @@ KeyHandler::KeyHandler(int virtualKey, BOOL extended) : virtualKey(virtualKey), 
 
 KeyHandler::~KeyHandler()
 {
-}
-
-
-void KeyHandler::handle(std::string)
-{
-	generateKey(virtualKey, extended);
 }

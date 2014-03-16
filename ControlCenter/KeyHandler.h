@@ -10,8 +10,8 @@ private:
 
 protected:
 	KeyHandler(int virtualKey, BOOL extended);
+	void generateKey(int virtualKey, BOOL extended);
 
 public:
 	virtual ~KeyHandler();
-	void handle(std::string) override;
 };
