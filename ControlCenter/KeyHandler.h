@@ -4,12 +4,8 @@
 
 class KeyHandler : public CommandHandler
 {
-private:
-	const int  virtualKey;
-	const BOOL extended;
-
 protected:
-	KeyHandler(int virtualKey, BOOL extended);
+	KeyHandler();
 	void generateKey(int virtualKey, BOOL extended);
 
 public:

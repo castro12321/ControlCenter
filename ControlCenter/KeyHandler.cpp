@@ -30,7 +30,7 @@ void KeyHandler::generateKey(int vk, BOOL bExtended)
 }
 
 
-KeyHandler::KeyHandler(int virtualKey, BOOL extended) : virtualKey(virtualKey), extended(extended)
+KeyHandler::KeyHandler()
 {
 }
 
