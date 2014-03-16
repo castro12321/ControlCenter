@@ -5,6 +5,7 @@
 #include "OpenHandler.h"
 #include "CloseHandler.h"
 #include "SayTimeHandler.h"
+#include "RefreshHandler.h"
 
 CommandRecognizer::CommandRecognizer()
 {
@@ -52,6 +53,10 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	static const std::regex SAY_DATE1("^say date"), SAY_DATE2("^date");
 	if (std::regex_search(sentence, result, SAY_DATE1) || std::regex_search(sentence, result, SAY_DATE2))
 		return new SayTimeHandler(SayTimeHandler::COMMAND::SAY_DATE);
+
+	static const std::regex REFRESH("^refresh");
+	if (std::regex_search(sentence, result, REFRESH))
+		return new RefreshHandler();
 
 	static const std::regex SHOW_DESKTOP("^show desktop");
 
