@@ -89,6 +89,7 @@
     <ClInclude Include="CreateHandler.h" />
     <ClInclude Include="KeyHandler.h" />
     <ClInclude Include="OpenHandler.h" />
+    <ClInclude Include="TabHandler.h" />
     <ClInclude Include="RefreshHandler.h" />
     <ClInclude Include="SayTimeHandler.h" />
     <ClInclude Include="ShowDesktopHandler.h" />
@@ -108,6 +109,7 @@
     <ClCompile Include="KeyHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OpenHandler.cpp" />
+    <ClCompile Include="TabHandler.cpp" />
     <ClCompile Include="RefreshHandler.cpp" />
     <ClCompile Include="SayTimeHandler.cpp" />
     <ClCompile Include="ShowDesktopHandler.cpp" />

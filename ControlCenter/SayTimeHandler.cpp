@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "SayTimeHandler.h"
 
-SayTimeHandler::SayTimeHandler(COMMAND value)
+SayTimeHandler::SayTimeHandler(Task value)
 {
-	cammand = value;
+	task = value;
 }
 
 SayTimeHandler::~SayTimeHandler()
@@ -19,7 +19,7 @@ void SayTimeHandler::handle(std::string sentence)
 	sstream.clear();
 	std::string say;
 
-	switch(cammand)
+	switch(task)
 	{
 		case SAY_TIME:
 			{

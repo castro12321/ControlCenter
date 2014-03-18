@@ -29,7 +29,7 @@ void KeyHandler::generateKey(int vk, BOOL bExtended)
 	::SendInput(1, &input, sizeof(input));
 }
 
-void KeyHandler::keyUp(int vk, BOOL bExtended)
+void KeyHandler::keyDown(int vk, BOOL bExtended)
 {
 	KEYBDINPUT kb = { 0 };
 	INPUT   input = { 0 };
@@ -43,7 +43,7 @@ void KeyHandler::keyUp(int vk, BOOL bExtended)
 	::SendInput(1, &input, sizeof(input));
 }
 
-void KeyHandler::keyDown(int vk, BOOL bExtended)
+void KeyHandler::keyUp(int vk, BOOL bExtended)
 {
 	KEYBDINPUT kb = { 0 };
 	INPUT   input = { 0 };
