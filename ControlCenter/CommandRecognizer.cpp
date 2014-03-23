@@ -9,6 +9,7 @@
 #include "CreateHandler.h"
 #include "ShowDesktopHandler.h"
 #include "TabHandler.h"
+#include "ZoomHandler.h"
 
 CommandRecognizer::CommandRecognizer()
 {
@@ -80,6 +81,18 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	static const std::regex SHOW_DESKTOP("^show desktop");
 	if (std::regex_search(sentence, result, SHOW_DESKTOP))
 		return new ShowDesktopHandler();
+
+	static const std::regex ZOOM_IN("^zoom in");
+	if (std::regex_search(sentence, result, ZOOM_IN))
+		return new ZoomHandler(ZoomHandler::Task::ZOOM_IN);
+
+	static const std::regex ZOOM_OUT("^zoom out");
+	if (std::regex_search(sentence, result, ZOOM_OUT))
+		return new ZoomHandler(ZoomHandler::Task::ZOOM_OUT);
+
+	static const std::regex ZOOM_RESET("^zoom reset");
+	if (std::regex_search(sentence, result, ZOOM_RESET))
+		return new ZoomHandler(ZoomHandler::Task::ZOOM_RESET);
 
 	//synthesizer.say("Sorry I don't know this command"); // Sorry, but it freezes the app :<
 	std::cout << "Nothing found! Returning nullptr :<\n";

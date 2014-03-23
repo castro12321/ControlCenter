@@ -14,7 +14,7 @@ void TabHandler::handle(std::string sentence)
 {
 	switch(task)
 	{
-		case OPEN_TAB:
+	case OPEN_TAB:
 		{
 			keyDown(VK_CONTROL, FALSE);
 			keyDown(0x54, FALSE);
@@ -24,7 +24,7 @@ void TabHandler::handle(std::string sentence)
 			break;
 		}
 
-		case CLOSE_TAB:
+	case CLOSE_TAB:
 		{
 			keyDown(VK_CONTROL, FALSE);
 			keyDown(0x57, FALSE);

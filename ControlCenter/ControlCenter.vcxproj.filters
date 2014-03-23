@@ -81,6 +81,9 @@
     <ClInclude Include="TabHandler.h">
       <Filter>Handlers</Filter>
     </ClInclude>
+    <ClInclude Include="ZoomHandler.h">
+      <Filter>Handlers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -132,6 +135,9 @@
       <Filter>Handlers</Filter>
     </ClCompile>
     <ClCompile Include="TabHandler.cpp">
+      <Filter>Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="ZoomHandler.cpp">
       <Filter>Handlers</Filter>
     </ClCompile>
   </ItemGroup>
