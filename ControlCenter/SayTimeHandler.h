@@ -4,10 +4,10 @@
 class SayTimeHandler : public CommandHandler
 {
 public:
-	enum COMMAND {SAY_TIME, SAY_DATE};
-	COMMAND cammand;
+	enum Task {SAY_TIME, SAY_DATE};
+	Task task;
 
-	SayTimeHandler(COMMAND value);
+	SayTimeHandler(Task value);
 	virtual ~SayTimeHandler();
 
 	void handle(std::string sentence) override;
