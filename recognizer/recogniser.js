@@ -34,7 +34,7 @@
 		       			// If the user said 'video' then parse it further
 						
 						// TODO: handle recognised string
-						document.getElementById("recogniser").innerHTML += (str + "<br>");
+						document.getElementById("recognised").innerHTML += (str + "<br>");
 	       			}
 	        	}
 	    	}
