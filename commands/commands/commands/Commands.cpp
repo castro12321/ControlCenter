@@ -40,11 +40,17 @@ void Commands::recognizeCommand(std::string sentence)
 
 	static const std::regex OPEN_PROGRAM("^open .*");
 	if (std::regex_search(sentence, result, OPEN_PROGRAM))
-		system("open_handler.exe");
+	{
+		std::string parameter = std::string("open_handler.exe ") + sentence;
+		system(parameter.c_str());
+	}
 
 	static const std::regex CLOSE_PROGRAM("^close .*");
 	if (std::regex_search(sentence, result, CLOSE_PROGRAM))
-		system("close_handler.exe");
+	{
+		std::string parameter = std::string("open_handler.exe ") + sentence;
+		system(parameter.c_str());
+	}
 
 	static const std::regex SAY_TIME1("^say time"), SAY_TIME2("^time");
 	if (std::regex_search(sentence, result, SAY_TIME1)
