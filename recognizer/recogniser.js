@@ -1,3 +1,8 @@
+function log(str)
+{
+	document.getElementById("recognised").innerHTML += (str + "<br>");
+}
+
 (function() {
 	// Get some required handles
 	var recStatus   = document.getElementById('recStatus');
@@ -35,7 +40,7 @@
 		       			// If the user said 'video' then parse it further
 						
 						// TODO: handle recognised string
-						document.getElementById("recognised").innerHTML += (str + "<br>");
+						log(str);
 	       			}
 	        	}
 	    	}
