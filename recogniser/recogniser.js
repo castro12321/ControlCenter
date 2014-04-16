@@ -3,6 +3,23 @@ function log(str)
 	document.getElementById("recognised").innerHTML += (str + "<br>");
 }
 
+var targetAddress = "http://localhost:820/speech/get.php?";
+
+function httpGetAsync(message)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", targetAddress+message, true);
+    xmlHttp.send();
+}
+
+function httpGet(message)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", targetAddress+message, false);
+    xmlHttp.send();
+	log(xmlHttp.responseText);
+}
+
 (function() {
 	// Get some required handles
 	var recStatus   = document.getElementById('recStatus');
@@ -41,6 +58,7 @@ function log(str)
 						
 						// TODO: handle recognised string
 						log(str);
+						httpGet(str);
 	       			}
 	        	}
 	    	}
