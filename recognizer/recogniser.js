@@ -1,8 +1,8 @@
 (function() {
 	// Get some required handles
-	var recStatus = document.getElementById('recStatus');
+	var recStatus   = document.getElementById('recStatus');
 	var startRecBtn = document.getElementById('startRecBtn');
-	var stopRecBtn = document.getElementById('stopRecBtn');
+	var stopRecBtn  = document.getElementById('stopRecBtn');
 
 	// Define a new speech recognition instance
 	var rec = null;
@@ -17,7 +17,8 @@
     if (rec) {
 		rec.continuous = true;
 		rec.interimResults = false;
-		rec.lang = 'en';
+		//rec.lang = 'en';
+		rec.lang = 'pl';
 
 		// Process the results when they are returned from the recogniser
 		rec.onresult = function(e) {
