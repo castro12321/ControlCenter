@@ -46,6 +46,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>D:\gdrive\Google Drive\code\c++\api\SFML-2.1\lib\Release;D:\gdrive\Google Drive\code\c++\api\pocketsphinx\bin\Release;D:\gdrive\Google Drive\code\c++\api\sphinxbase\bin\Release;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\sphinxbase\bin\Release;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\pocketsphinx\bin\Release;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\SFML-2.1 32bit\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+    <IncludePath>D:\gdrive\Google Drive\code\c++\api\dirent\include;D:\gdrive\Google Drive\code\c++\api\SFML-2.1\include;D:\gdrive\Google Drive\code\c++\api\pocketsphinx\include;D:\gdrive\Google Drive\code\c++\api\sphinxbase\include\win32;D:\gdrive\Google Drive\code\c++\api\sphinxbase\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\dirent.h;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\pocketsphinx\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\sphinxbase\include;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\SFML-2.1 32bit\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -60,7 +62,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\pocketsphinx\bin\Debug;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\CMU Sphinx\sphinxbase\bin\Debug;C:\Users\Piotr Bielski\Documents\Programowanie\Biblioteki\SFML-2.1 32bit\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-audio-d.lib;pocketsphinx.lib;sphinxbase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;pocketsphinx.lib;sphinxbase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -78,6 +80,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-system.lib;sfml-window.lib;sfml-audio.lib;sfml-network.lib;pocketsphinx.lib;sphinxbase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -99,6 +102,7 @@
     <ClInclude Include="VoiceRecorder.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="WebRequestListener.h" />
     <ClInclude Include="WindowHandler.h" />
     <ClInclude Include="ZoomHandler.h" />
   </ItemGroup>
@@ -122,6 +126,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="WebRequestListener.cpp" />
     <ClCompile Include="WindowHandler.cpp" />
     <ClCompile Include="ZoomHandler.cpp" />
   </ItemGroup>
