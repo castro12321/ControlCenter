@@ -3,7 +3,7 @@ function log(str)
 	document.getElementById("recognised").innerHTML += (str + "<br>");
 }
 
-var targetAddress = "http://localhost:80/speech/get.php";
+var targetAddress = "http://localhost:820/speech/";
 
 function httpGet(message)
 {
