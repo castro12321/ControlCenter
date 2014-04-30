@@ -85,7 +85,7 @@
       <Filter>Handlers</Filter>
     </ClInclude>
     <ClInclude Include="WebRequestListener.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -144,7 +144,7 @@
       <Filter>Handlers</Filter>
     </ClCompile>
     <ClCompile Include="WebRequestListener.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

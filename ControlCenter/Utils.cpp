@@ -24,6 +24,16 @@ std::vector<std::string> Utils::split(const std::string& s, char delim, int limi
 }
 
 
+std::string Utils::extractStringBetween(std::string& source, std::string& before, std::string& after)
+{
+	size_t first = source.find(before);
+	size_t last  = source.find(after);
+	if (first == std::string::npos || last == std::string::npos)
+		return "";
+	return source.substr(first+before.length(), last-(first+before.length()));
+}
+
+
 std::vector<std::string> Utils::getDeclaredApplications()
 {
 	std::vector<std::string> applications;

@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	while (true)
 	{
 		std::cout << "query listener for a request\n";
-		std::string request = listener.nextRequest();
+		std::string request = listener.nextSentence();
 		if (request != "")
 		{
 			std::cout << "Got request!\n--- REQUEST ---\n" << request << "\n\n";

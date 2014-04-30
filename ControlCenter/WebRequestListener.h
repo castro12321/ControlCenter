@@ -8,5 +8,5 @@ private:
 
 public:
 	WebRequestListener();
-	std::string nextRequest();
+	std::string nextSentence();
 };
