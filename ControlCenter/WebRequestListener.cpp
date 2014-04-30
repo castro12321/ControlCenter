@@ -24,7 +24,7 @@ bool replace(std::string& str, const std::string& from, const std::string& to)
 void replaceAll(std::string& str, const std::string& from, const std::string& to)
 {
 	while (replace(str, from, to))
-		;
+		; // Do nothing. Just replace everything as many times as possible
 }
 
 
