@@ -8,10 +8,9 @@ var targetAddress = "http://localhost:820/speech/";
 function httpGet(message)
 {
 	$.ajax({
-			url: targetAddress,
+			url: targetAddress+message,
 			dataType: 'jsonp',
 			type: 'GET',
-			data: {'recognised':message }
 	});
 }
 
