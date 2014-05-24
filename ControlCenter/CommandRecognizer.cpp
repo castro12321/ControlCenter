@@ -93,6 +93,10 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	static const std::regex ZOOM_RESET("^zoom reset");
 	if (std::regex_search(sentence, result, ZOOM_RESET))
 		return new ZoomHandler(ZoomHandler::Task::ZOOM_RESET);
+	
+	static const std::regex WEATHER("^weather");
+	if (std::regex_search(sentence, result, WEATHER))
+		return new WeatherHandler(); // Load weather info from google weather api
 
 	//synthesizer.say("Sorry I don't know this command"); // Sorry, but it freezes the app :<
 	std::cout << "Nothing found! Returning nullptr :<\n";
