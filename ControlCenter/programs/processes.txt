@@ -2,3 +2,4 @@ control=notepad++.exe
 notepad=notepad++.exe
 opera=opera.exe
 google drive=gdrivesync.exe
+przegladarke=chrome.exe

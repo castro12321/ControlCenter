@@ -5,12 +5,16 @@
 
 #include "ControlCenter.h"
 #include "WebRequestListener.h"
+#include "CommandRecognizer.h"
+#include "CommandHandler.h"
 
 
 int main(int argc, char *argv[])
 {
-	std::cout << "Starting web listener\n";
 	WebRequestListener listener;
+	CommandRecognizer cmmndRecognizer;
+
+	std::cout << "Starting web listener\n";
 	while (true)
 	{
 		std::cout << "query listener for a request\n";
@@ -19,6 +23,11 @@ int main(int argc, char *argv[])
 		{
 			std::cout << "Got request!\n--- REQUEST ---\n" << request << "\n\n";
 			// Handle it...
+
+			CommandHandler* handler = cmmndRecognizer.recognizeCommand(request);
+
+			if (handler != nullptr)
+				handler->handle(request);
 		}
 	}
 
