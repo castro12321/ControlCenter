@@ -34,6 +34,18 @@ std::string Utils::extractStringBetween(std::string& source, std::string& before
 }
 
 
+std::string Utils::removeSpaceBefore(std::string sentence)
+{
+	std::vector<char> characters(sentence.begin(), sentence.end());
+
+	if (characters.at(0) = ' ' && characters.size() > 1)
+	{
+		return std::string(characters.begin() + 1, characters.end());
+	}
+	return sentence;
+}
+
+
 std::vector<std::string> Utils::getDeclaredApplications()
 {
 	std::vector<std::string> applications;

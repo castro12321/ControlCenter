@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include "Utils.h"
 
 #include "ControlCenter.h"
 #include "WebRequestListener.h"
@@ -21,9 +22,9 @@ int main(int argc, char *argv[])
 		std::string request = listener.nextSentence();
 		if (request != "")
 		{
+			request = Utils::removeSpaceBefore(request);
 			std::cout << "Got request!\n--- REQUEST ---\n" << request << "\n\n";
-			// Handle it...
-
+			
 			CommandHandler* handler = cmmndRecognizer.recognizeCommand(request);
 
 			if (handler != nullptr)
