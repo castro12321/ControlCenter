@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		std::string request = listener.nextSentence();
 		if (request != "")
 		{
-			request = Utils::removeSpaceBefore(request);
+			request = Utils::trim(request);
 			std::cout << "Got request!\n--- REQUEST ---\n" << request << "\n\n";
 			
 			CommandHandler* handler = cmmndRecognizer.recognizeCommand(request);
