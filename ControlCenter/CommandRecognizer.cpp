@@ -62,11 +62,13 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	if (std::regex_search(sentence, result, CLOSE_PROGRAM))
 		return new CloseHandler();
 
+	// Works
 	static const std::regex SAY_TIME1("^jaki czas"), SAY_TIME2("^czas");
 	if (std::regex_search(sentence, result, SAY_TIME1)
 	|| std::regex_search(sentence, result, SAY_TIME2))
 		return new SayTimeHandler(SayTimeHandler::Task::SAY_TIME);
 
+	// Works
 	static const std::regex SAY_DATE1("^jaka data"), SAY_DATE2("^data");
 	if (std::regex_search(sentence, result, SAY_DATE1)
 	|| std::regex_search(sentence, result, SAY_DATE2))
@@ -90,14 +92,17 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	if (std::regex_search(sentence, result, SHOW_DESKTOP))
 		return new ShowDesktopHandler();
 
+	// Works
 	static const std::regex ZOOM_IN("^przybliz");
 	if (std::regex_search(sentence, result, ZOOM_IN))
 		return new ZoomHandler(ZoomHandler::Task::ZOOM_IN);
 
+	// Works
 	static const std::regex ZOOM_OUT("^oddal");
 	if (std::regex_search(sentence, result, ZOOM_OUT))
 		return new ZoomHandler(ZoomHandler::Task::ZOOM_OUT);
 
+	// Works
 	static const std::regex ZOOM_RESET("^zoom reset"); // I don't know how to translate it :-(
 	if (std::regex_search(sentence, result, ZOOM_RESET))
 		return new ZoomHandler(ZoomHandler::Task::ZOOM_RESET);
