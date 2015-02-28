@@ -57,7 +57,11 @@ function httpGet(message)
 	        	}
 	    	}
 		};
-
+		
+		rec.onend = function() {
+			rec.start();
+		}
+		
 		// Start speech recognition
 		var startRec = function() {
 			rec.start();
