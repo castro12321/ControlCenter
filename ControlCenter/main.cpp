@@ -10,7 +10,7 @@
 #include "CommandHandler.h"
 
 
-int main(int argc, char *argv[])
+int main()
 {
 	WebRequestListener listener;
 	CommandRecognizer cmmndRecognizer;
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	std::cin.get();
 	return 0;
 
-	/*
+	/* Offline speech recognizer
 	SpeechSynthesizer synthesizer;
 
 	std::cout << "Initializing Control Center\n";

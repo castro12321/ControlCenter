@@ -26,15 +26,15 @@ void SayTimeHandler::handle(std::string sentence)
 			std::string hour;
 			std::string minute;
 
-			sstream<<time.wHour;
-			sstream>>hour;
+			sstream << time.wHour;
+			sstream >> hour;
 
 			sstream.clear();
 
-			sstream<<time.wMinute;
-			sstream>>minute;
+			sstream << time.wMinute;
+			sstream >> minute;
 
-			say = std::string("<context id='time'>It's ")+hour+std::string(":")+minute+std::string("</context>");
+			say = std::string("<context id='time'>It's ") + hour+std::string(":") + minute + std::string("</context>");
 			synthesizer.say(say);
 			break;
 		}

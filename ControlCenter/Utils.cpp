@@ -36,11 +36,9 @@ std::string Utils::extractStringBetween(std::string& source, std::string& before
 
 std::string Utils::trim(std::string sentence)
 {
-	std::stringstream trimmer;
-	trimmer << sentence;
-	sentence.clear();
-	trimmer >> sentence;
-	return sentence;
+	size_t first = sentence.find_first_not_of(' ');
+	size_t last = sentence.find_last_not_of(' ');
+	return sentence.substr(first, (last - first + 1));
 }
 
 

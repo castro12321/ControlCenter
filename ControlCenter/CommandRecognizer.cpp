@@ -25,24 +25,29 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 
 	std::smatch result;
 
+	// Works
 	static const std::regex NEW_TAB("^nowa karta");
 	if (std::regex_search(sentence, result, NEW_TAB))
 		return new TabHandler(TabHandler::Task::OPEN_TAB);
 
+	// Works
 	static const std::regex CLOSE_TAB("^zamknij karte");
 	if (std::regex_search(sentence, result, CLOSE_TAB))
 		return new TabHandler(TabHandler::Task::CLOSE_TAB);
 
+	// Works
 	static const std::regex WINDOW_CLOSE1("^zamknij aktywne"), WINDOW_CLOSE2("^zamknij okno");
 	if (std::regex_search(sentence, result, WINDOW_CLOSE1)
 	||  std::regex_search(sentence, result, WINDOW_CLOSE2))
 		return new WindowHandler(WindowHandler::CLOSE);
 
+	// Works
 	static const std::regex WINDOW_MINIMIZE1("^minimalizuj okno"), WINDOW_MINIMIZE2("^minimalizuj");
 	if (std::regex_search(sentence, result, WINDOW_MINIMIZE1)
 	||  std::regex_search(sentence, result, WINDOW_MINIMIZE2))
 		return new WindowHandler(WindowHandler::MINIMIZE);
 
+	// Works
 	static const std::regex WINDOW_MAXIMIZE1("^maksymalizuj okno"), WINDOW_MAXIMIZE2("^maksymalizuj");
 	if (std::regex_search(sentence, result, WINDOW_MAXIMIZE1)
 	||  std::regex_search(sentence, result, WINDOW_MAXIMIZE2))
@@ -52,6 +57,7 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	if (std::regex_search(sentence, result, OPEN_PROGRAM))
 		return new OpenHandler();
 
+	// Crashes if cannot find application
 	static const std::regex CLOSE_PROGRAM("^zamknij .*");
 	if (std::regex_search(sentence, result, CLOSE_PROGRAM))
 		return new CloseHandler();
@@ -66,6 +72,7 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	|| std::regex_search(sentence, result, SAY_DATE2))
 		return new SayTimeHandler(SayTimeHandler::Task::SAY_DATE);
 
+	// Works
 	static const std::regex REFRESH("^odswiez");
 	if (std::regex_search(sentence, result, REFRESH))
 		return new RefreshHandler();
@@ -78,6 +85,7 @@ CommandHandler* CommandRecognizer::recognizeCommand(std::string sentence)
 	if (std::regex_search(sentence, result, CREATE_FILE))
 		return new CreateHandler(CreateHandler::COMMAND::CREATE_FILE);
 
+	// Works
 	static const std::regex SHOW_DESKTOP("^pokaz pulpit");
 	if (std::regex_search(sentence, result, SHOW_DESKTOP))
 		return new ShowDesktopHandler();
