@@ -19,21 +19,29 @@ void OpenHandler::runProgram(std::string name)
 	std::wstring programName = std::wstring(name.begin(), name.end()) + L".lnk";
 
 	for (std::string program : programs)
+	{
 		if (program == std::string(name + ".lnk"))
 		{
 			ShellExecute(NULL, L"open", programName.c_str(), NULL, L"programs", SW_SHOWDEFAULT);
 			return;
 		}
+	}
 	
 	synthesizer.say("I didn't find program");
 }
 
 void OpenHandler::handle(std::string sentence)
 {
-	std::vector<std::string> words = Utils::split(sentence, ' ', 1);
+	std::vector<std::string> words = Utils::split(sentence, ' ');
 	if(words.size() > 1)
 	{
-		std::string program = words.at(1);
+		std::string program = "";
+		for (int i = 1; i < words.size(); ++i)
+		{
+			if (i > 1)
+				program += " ";
+			program += words.at(i);
+		}
 		runProgram(program);
 	}
 	else
